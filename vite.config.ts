@@ -6,9 +6,10 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
-    // Use relative base for local dev/preview to avoid absolute /assets requests
-    // which can cause the server to return index.html for asset URLs.
-    const base = mode === 'production' ? 'https://nafsanimatedmap.vercel.app/' : './';
+  // Use a relative base for both dev and production so built HTML uses
+  // relative asset paths (./assets/...), which prevents absolute-root
+  // requests that can be rewritten to index.html by some hosting setups.
+  const base = './';
     return {
       base,
       define: {
