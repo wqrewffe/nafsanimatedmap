@@ -1,0 +1,7 @@
+{
+  "name": "Map Animator AI",
+  "description": "An application that generates animated map routes. Simply enter a list of locations or a country/city name, and watch as an animated path is drawn on the map, visualizing your journey.",
+  "requestFramePermissions": [
+    "display-capture"
+  ]
+}
